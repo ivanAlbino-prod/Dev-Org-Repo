@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Accounts">
+        <lightning-input class="slds-size_1-of-3 slds-p-around_small" type="number" name="Size" label="Size" value={size}></lightning-input>
+        <lightning-button label="Update table size" onclick={updateSize} class="slds-size_1-of-3 slds-p-around_small" variant="brand"></lightning-button>
+        <lightning-layout>
+            <lightning-datatable key-field="Id" data={tableData} columns={columns} hide-checkbox-column></lightning-datatable>
+        </lightning-layout>
+    </lightning-card>
+</template>

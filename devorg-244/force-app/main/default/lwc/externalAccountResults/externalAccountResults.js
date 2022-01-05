@@ -50,9 +50,7 @@ export default class ExternalAccountResults extends LightningElement {
         this.extAccList = JSON.parse(JSON.stringify(this.extAccs));
         this.accList = JSON.parse(JSON.stringify(this.accounts));
         this.extAccList.forEach((element) =>{
-            console.log('element ->' , element);
             this.accList.forEach((item) => {
-                console.log('item ->' , item);
                 if(element.Name__c === item.Name){
                     this.extObjList.push(element);
                     this.acctObjList.push(item);
