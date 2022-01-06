@@ -6,6 +6,7 @@ import Type from '@salesforce/schema/Account.Type';
 export default class ExternalAccountsREST extends LightningElement {
     @track
     tableData;
+    records;
     size = 10;
     names = [];
 
@@ -18,8 +19,8 @@ export default class ExternalAccountsREST extends LightningElement {
     @wire(getAccounts,{size : '$size'})
     wiredGetAcc({data,error}){
         if(data){
-            this.tableData = JSON.parse(data);
-            this.tableData.forEach((element) =>{
+            this.records = JSON.parse(data);
+            this.records.forEach((element) =>{
                 console.log('🌻', element.Name);
                 this.names.push(element.Name);
             });
