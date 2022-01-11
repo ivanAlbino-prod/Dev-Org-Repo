@@ -19,6 +19,7 @@ export default class ExternalAccountsREST extends LightningElement {
     @wire(getAccounts,{size : '$size'})
     wiredGetAcc({data,error}){
         if(data){
+            console.log(data);
             this.records = JSON.parse(data);
             this.records.forEach((element) =>{
                 console.log('🌻', element.Name);
