@@ -9,6 +9,7 @@ export default class ExternalAccountsREST extends LightningElement {
     records;
     size = 10;
     names = [];
+    loaded = false;
 
     columns = [
         {label: 'Account Number', fieldName: 'AccountNumber'},
@@ -34,6 +35,7 @@ export default class ExternalAccountsREST extends LightningElement {
     }
 
     handleGetrecords(){
+        this.loaded = true;
         getRecords({names : this.names})
         .then(result => {
             console.log('🍔', result);
@@ -47,6 +49,7 @@ export default class ExternalAccountsREST extends LightningElement {
     }
 
     updateSize(event) {
+        this.loaded = false;
         this.size = this.template.querySelector('lightning-input').value;
     }
 
