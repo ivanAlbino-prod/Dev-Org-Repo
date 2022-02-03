@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Books">
+            <template if:true={loaded}>
+                <lightning-input class="slds-size_1-of-3 slds-p-around_small" type="number" name="Size" label="Size" value={size}></lightning-input>
+                <lightning-button label="Update table size" onclick={updateSize} class="slds-size_1-of-3 slds-p-around_small" variant="brand"></lightning-button>
+                <lightning-card>
+                    <lightning-layout-item size="12">
+                        <lightning-datatable key-field="Id" data={tableData} columns={columns} hide-checkbox-column></lightning-datatable>
+                    </lightning-layout-item>
+                </lightning-card>
+            </template>
+            <template if:false={loaded}>
+                <lightning-spinner alternative-text="Loading"></lightning-spinner>
+            </template>
+    </lightning-card>
+</template>
